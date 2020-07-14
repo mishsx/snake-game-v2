@@ -16,7 +16,10 @@ const gameBoard = document.getElementById("game-board");
 // Creating a game loop
 function main(currentTime) {
   if (gameOver) {
-    return alert("You lose!!");
+    if (confirm("You lost ☠️😌☠️ Press OK to restart 👾")) {
+      window.location = "/";
+    }
+    return;
   }
   window.requestAnimationFrame(main);
   const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000;
